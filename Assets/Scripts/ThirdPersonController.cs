@@ -114,6 +114,14 @@ namespace DefaultNamespace
         private void GroundCheck()
         {
             isGrounded = Physics.CheckSphere(feet.position, detectionRadius, whatIsGround);
+            if (isGrounded)
+            {
+                anim.SetBool("isGrounded", true);
+            }
+            else
+            {
+                anim.SetBool("isGrounded", false);
+            }
         }
 
         private void OnDrawGizmos()
