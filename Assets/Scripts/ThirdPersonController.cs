@@ -96,7 +96,7 @@ namespace DefaultNamespace
             controller.Move((movement + verticalMovement) * Time.deltaTime);
             
             // Actualizar animación
-            anim.SetFloat("speed", currentSpeed / movementSpeed);
+            anim.SetFloat("Speed", currentSpeed / movementSpeed);
         }
 
         private void ApplyGravity()
