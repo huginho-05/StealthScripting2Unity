@@ -2651,7 +2651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.ThirdPersonController
   movementSpeed: 2
-  jumpHeight: 1
+  jumpHeight: 0.5
   gravityScale: -9.8
   movementSmoothFactor: 0.3
   rotationSmoothFactor: 0.3
