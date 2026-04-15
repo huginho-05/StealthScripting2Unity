@@ -2067,7 +2067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1008312085
 Transform:
   m_ObjectHideFlags: 0
@@ -2124,6 +2124,7 @@ MonoBehaviour:
   m_BlackboardVariableOverridesList:
   - rid: 8566636203915084024
   - rid: 8566636292478074958
+  - rid: 8566636294688473437
   m_OriginalGraph: {fileID: 1584265261137272530, guid: 774f91cf3120db44fb4de5c952c4cde8, type: 2}
   m_IsInitialised: 0
   m_IsStarted: 0
@@ -2146,6 +2147,14 @@ MonoBehaviour:
           m_Value1: 10143677068429985828
         Name: Player
         m_Value: {fileID: 1375925644}
+    - rid: 8566636294688473437
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 13885851328281733039
+          m_Value1: 7397170451552370407
+        Name: Enemy
+        m_Value: {fileID: 5101063439086734833}
 --- !u!195 &1008312088
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6455,6 +6464,7 @@ MonoBehaviour:
   m_Graph: {fileID: 428532603313531163, guid: a3378552bd4994e4aa1138f449ba63c6, type: 2}
   m_BlackboardVariableOverridesList:
   - rid: 8566636206768783484
+  - rid: 8566636294688473088
   m_OriginalGraph: {fileID: 0}
   m_IsInitialised: 0
   m_IsStarted: 0
@@ -6469,6 +6479,14 @@ MonoBehaviour:
           m_Value1: 0
         Name: Self
         m_Value: {fileID: 5101063439086734833}
+    - rid: 8566636294688473088
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 11108610664729677097
+          m_Value1: 12315793250086021260
+        Name: Player
+        m_Value: {fileID: 1375925644}
 --- !u!195 &5584831355949094735
 NavMeshAgent:
   m_ObjectHideFlags: 0
