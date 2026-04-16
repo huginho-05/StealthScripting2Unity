@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AllieSensorSystem : MonoBehaviour
+public class SensorSystem : MonoBehaviour
 {
     [field: SerializeField] public float SensorRadius { get; private set; }
     [field: SerializeField] public float SensorAngle { get; private set; }

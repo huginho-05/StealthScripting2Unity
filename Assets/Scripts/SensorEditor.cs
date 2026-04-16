@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEditor;
 
-public class AllieSensorEditor : MonoBehaviour
+public class SensorEditor : MonoBehaviour
 {
-    [CustomEditor(typeof(AllieSensorSystem))]
+    [CustomEditor(typeof(SensorSystem))]
     public class SensorSystemEditor : UnityEditor.Editor
     {
         private void OnSceneGUI()
         {
-            AllieSensorSystem sensor = (AllieSensorSystem) target;
+            SensorSystem sensor = (SensorSystem) target;
             Handles.color = Color.white;
             Handles.DrawWireArc (sensor.transform.position, Vector3.up, Vector3.forward, 360, sensor.SensorRadius);
             Vector3 viewAngleA = sensor.DirFromAngle (-sensor.SensorAngle / 2, true);

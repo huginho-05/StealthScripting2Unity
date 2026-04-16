@@ -31,13 +31,9 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Trap"))
+        if (collision.gameObject.CompareTag("Enemies"))
         {
             ReceiveDamage(10); 
-        }
-        if (collision.gameObject.CompareTag("DeathTrigger"))
-        {
-            ReceiveDamage(100); 
         }
     }
     
