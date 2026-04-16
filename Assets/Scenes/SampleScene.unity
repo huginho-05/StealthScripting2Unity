@@ -3881,7 +3881,7 @@ GameObject:
   - component: {fileID: 1864629768}
   m_Layer: 0
   m_Name: StartCombat
-  m_TagString: Untagged
+  m_TagString: CombatStart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6892,6 +6892,7 @@ GameObject:
   - component: {fileID: 5584831355949094733}
   - component: {fileID: 5584831355949094732}
   - component: {fileID: 5584831355949094736}
+  - component: {fileID: 5584831355949094737}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -7224,6 +7225,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5584831355949094737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5101063439086734833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92745e1fa20e4c34d816f71796bbce92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SensorSystem
+  <SensorRadius>k__BackingField: 100
+  <SensorAngle>k__BackingField: 90
+  whatIsTarget:
+    serializedVersion: 2
+    m_Bits: 64
+  whatIsObstacle:
+    serializedVersion: 2
+    m_Bits: 951
 --- !u!1 &5589892537698346205
 GameObject:
   m_ObjectHideFlags: 0
