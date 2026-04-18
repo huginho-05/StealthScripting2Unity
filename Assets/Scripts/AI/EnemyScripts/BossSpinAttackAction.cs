@@ -19,15 +19,15 @@ public partial class BossSpinAttackAction : Action
     [Header("Mareo")]
     public float DizzyDuration = 2.0f;
 
-    private float timer;
-    private bool isDizzy;
+    private float _timer;
+    private bool _isDizzy;
 
     protected override Status OnStart()
     {
         if (Self.Value == null || Player.Value == null) return Status.Failure;
         
-        timer = 0f;
-        isDizzy = false;
+        _timer = 0f;
+        _isDizzy = false;
         return Status.Running;
     }
 
@@ -36,9 +36,9 @@ public partial class BossSpinAttackAction : Action
         if (Self.Value == null || Player.Value == null) return Status.Failure;
 
         Transform bossTransform = Self.Value.transform;
-        timer += Time.deltaTime;
+        _timer += Time.deltaTime;
 
-        if (!isDizzy)
+        if (!_isDizzy)
         {
             //Girar sobre sí mismo
             bossTransform.Rotate(Vector3.up, SpinSpeed * Time.deltaTime);
@@ -49,15 +49,15 @@ public partial class BossSpinAttackAction : Action
             bossTransform.position = Vector3.MoveTowards(bossTransform.position, destination, MoveSpeed * Time.deltaTime);
 
             //Se acaba el tiempo de ataque
-            if (timer >= AttackDuration)
+            if (_timer >= AttackDuration)
             {
-                isDizzy = true;
-                timer = 0f; 
+                _isDizzy = true;
+                _timer = 0f; 
             }
         }
         else
         {
-            if (timer >= DizzyDuration)
+            if (_timer >= DizzyDuration)
             {
                 //Termina la acción y el Behavior Tree pasará al siguiente nodo
                 return Status.Success;
