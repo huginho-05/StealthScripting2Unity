@@ -7615,7 +7615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3741749440588562937
 Transform:
   m_ObjectHideFlags: 0
@@ -7894,6 +7894,7 @@ MonoBehaviour:
   m_Graph: {fileID: 7433314314136772959, guid: 58c8b11fed50654489a052ae830a80bf, type: 2}
   m_BlackboardVariableOverridesList:
   - rid: 8566636338007244873
+  - rid: 8566636370923356743
   m_OriginalGraph: {fileID: 7433314314136772959, guid: 58c8b11fed50654489a052ae830a80bf, type: 2}
   m_IsInitialised: 0
   m_IsStarted: 0
@@ -7908,6 +7909,14 @@ MonoBehaviour:
           m_Value1: 0
         Name: Self
         m_Value: {fileID: 3707928300311697462}
+    - rid: 8566636370923356743
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 14931845119756756803
+          m_Value1: 7625700820240073803
+        Name: Player
+        m_Value: {fileID: 1375925644}
 --- !u!195 &4052929088334201487
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -8904,7 +8913,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5105414588591704589
 Transform:
   m_ObjectHideFlags: 0
