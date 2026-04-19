@@ -3449,6 +3449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1864629767}
   - component: {fileID: 1864629768}
+  - component: {fileID: 1864629769}
   m_Layer: 0
   m_Name: StartCombat
   m_TagString: CombatStart
@@ -3492,6 +3493,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1864629769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864629766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3690905f3717d6489b16504a047185c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  goblin: {fileID: 3707928300311697462}
 --- !u!1 &1867142164
 GameObject:
   m_ObjectHideFlags: 0
@@ -6769,7 +6783,7 @@ Transform:
   m_GameObject: {fileID: 3707928300311697462}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 6.98315}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6817,6 +6831,7 @@ MonoBehaviour:
   m_BlackboardVariableOverridesList:
   - rid: 8566636338007244873
   - rid: 8566636370923356743
+  - rid: 8566636384239747879
   m_OriginalGraph: {fileID: 7433314314136772959, guid: 58c8b11fed50654489a052ae830a80bf, type: 2}
   m_IsInitialised: 0
   m_IsStarted: 0
@@ -6839,6 +6854,14 @@ MonoBehaviour:
           m_Value1: 7625700820240073803
         Name: Player
         m_Value: {fileID: 1375925644}
+    - rid: 8566636384239747879
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 17696998186556242948
+          m_Value1: 2540404550074150880
+        Name: Enemy
+        m_Value: {fileID: 5101063439086734833}
 --- !u!195 &4052929088334201487
 NavMeshAgent:
   m_ObjectHideFlags: 0

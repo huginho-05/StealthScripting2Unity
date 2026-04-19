@@ -16,15 +16,15 @@ public partial class AllieSwapsWithPlayerAction : Action
     {
         if (Self.Value == null || Player.Value == null) return Status.Failure;
 
-        Vector3 oldAlliePos = Self.Value.transform.position;
-        Vector3 oldPlayerPos = Player.Value.transform.position;
+        Vector3 AlliePos = Self.Value.transform.position;
+        Vector3 PlayerPos = Player.Value.transform.position;
 
         //Mover aliado
         NavMeshAgent selfAgent = Self.Value.GetComponent<NavMeshAgent>();
         if (selfAgent != null && selfAgent.enabled)
-            selfAgent.Warp(oldPlayerPos);
+            selfAgent.Warp(PlayerPos);
         else
-            Self.Value.transform.position = oldPlayerPos;
+            Self.Value.transform.position = PlayerPos;
 
         //Mover player
         CharacterController cc = Player.Value.GetComponent<CharacterController>();
@@ -34,12 +34,12 @@ public partial class AllieSwapsWithPlayerAction : Action
         {
             //Apagar CharacterController para teletransportar y volverlo a activar al completar el teletransporte
             cc.enabled = false;
-            Player.Value.transform.position = oldAlliePos;
+            Player.Value.transform.position = AlliePos;
             cc.enabled = true;
         }
         else if (rb != null)
         {
-            rb.position = oldAlliePos;
+            rb.position = AlliePos;
             rb.linearVelocity = Vector3.zero; //Evitar que se mueva de más por la inercia
         }
 

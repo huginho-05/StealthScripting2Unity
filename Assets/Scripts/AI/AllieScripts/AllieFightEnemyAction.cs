@@ -44,7 +44,7 @@ public partial class AllieFightEnemyAction : Action
     {
         if (!_destinationSet) return Status.Failure;
 
-        //Comprobar si hemos llegado al destino
+        //Comprobar si llega al destino
         if (!_agent.pathPending && _agent.remainingDistance <= _agent.stoppingDistance)
         {
             return Status.Success;
