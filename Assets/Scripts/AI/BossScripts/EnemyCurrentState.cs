@@ -6,5 +6,5 @@ public enum EnemyCurrentState
 {
 	WaitingForPlayer,
 	PhysicalCombat,
-	MagicCombat
+	Tired
 }
