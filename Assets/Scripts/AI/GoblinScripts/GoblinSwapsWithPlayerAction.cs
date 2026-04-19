@@ -16,10 +16,10 @@ public partial class AllieSwapsWithPlayerAction : Action
     {
         if (Self.Value == null || Player.Value == null) return Status.Failure;
 
-        Vector3 AlliePos = Self.Value.transform.position;
+        Vector3 GoblinPos = Self.Value.transform.position;
         Vector3 PlayerPos = Player.Value.transform.position;
 
-        //Mover aliado
+        //Mover goblin
         NavMeshAgent selfAgent = Self.Value.GetComponent<NavMeshAgent>();
         if (selfAgent != null && selfAgent.enabled)
             selfAgent.Warp(PlayerPos);
@@ -34,12 +34,12 @@ public partial class AllieSwapsWithPlayerAction : Action
         {
             //Apagar CharacterController para teletransportar y volverlo a activar al completar el teletransporte
             cc.enabled = false;
-            Player.Value.transform.position = AlliePos;
+            Player.Value.transform.position = GoblinPos;
             cc.enabled = true;
         }
         else if (rb != null)
         {
-            rb.position = AlliePos;
+            rb.position = GoblinPos;
             rb.linearVelocity = Vector3.zero; //Evitar que se mueva de más por la inercia
         }
 
