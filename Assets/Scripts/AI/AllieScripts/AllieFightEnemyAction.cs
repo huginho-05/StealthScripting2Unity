@@ -13,15 +13,15 @@ public partial class AllieFightEnemyAction : Action
     [SerializeReference] public BlackboardVariable<GameObject> Enemy;
     [SerializeReference] public BlackboardVariable<float> Radius = new BlackboardVariable<float>(4f);
 
-    private NavMeshAgent _agent;
-    private bool _destinationSet = false;
+    private NavMeshAgent agent;
+    private bool destinationSet = false;
 
     protected override Status OnStart()
     {
         if (Self.Value == null || Enemy.Value == null) return Status.Failure;
 
-        _agent = Self.Value.GetComponent<NavMeshAgent>();
-        if (_agent == null) return Status.Failure;
+        agent = Self.Value.GetComponent<NavMeshAgent>();
+        if (agent == null) return Status.Failure;
 
         //Calcular posición aleatoria alrededor del enemigo
         float angle = UnityEngine.Random.Range(0, 360) * Mathf.Deg2Rad;
@@ -31,9 +31,9 @@ public partial class AllieFightEnemyAction : Action
         //El punto está en el NavMesh
         if (NavMesh.SamplePosition(targetPos, out NavMeshHit hit, Radius.Value, NavMesh.AllAreas))
         {
-            _agent.SetDestination(hit.position);
-            _agent.isStopped = false;
-            _destinationSet = true;
+            agent.SetDestination(hit.position);
+            agent.isStopped = false;
+            destinationSet = true;
             return Status.Running;
         }
 
@@ -42,10 +42,10 @@ public partial class AllieFightEnemyAction : Action
 
     protected override Status OnUpdate()
     {
-        if (!_destinationSet) return Status.Failure;
+        if (!destinationSet) return Status.Failure;
 
         //Comprobar si llega al destino
-        if (!_agent.pathPending && _agent.remainingDistance <= _agent.stoppingDistance)
+        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
             return Status.Success;
         }

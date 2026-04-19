@@ -10,15 +10,13 @@ public partial class EnemyRunsPlayerAction : Action
 {
     [SerializeReference] public BlackboardVariable<GameObject> Self;
     [SerializeReference] public BlackboardVariable<GameObject> Player;
-
-    [Tooltip("Velocidad de la embestida")]
-    public float Speed = 10f;
     
-    [Tooltip("Distancia de parada para considerar que llegó")]
+    public float Speed = 10f;
+        
     public float StopDistance = 0.5f;
 
-    private Vector3 _targetPosition;
-    private bool _hasTarget = false;
+    private Vector3 targetPosition;
+    private bool hasTarget = false;
 
     protected override Status OnStart()
     {
@@ -26,34 +24,34 @@ public partial class EnemyRunsPlayerAction : Action
             return Status.Failure;
         
         //Ultima posicion del jugador 
-        _targetPosition = Player.Value.transform.position;
-        _hasTarget = true;
+        targetPosition = Player.Value.transform.position;
+        hasTarget = true;
 
         return Status.Running;
     }
 
     protected override Status OnUpdate()
     {
-        if (!_hasTarget) return Status.Failure;
+        if (!hasTarget) return Status.Failure;
 
         GameObject enemy = Self.Value;
 
         //Mover al enemigo hacia esa posicion 
         enemy.transform.position = Vector3.MoveTowards(
             enemy.transform.position, 
-            _targetPosition, 
+            targetPosition, 
             Speed * Time.deltaTime
         );
 
         //Hacer que mire hacia ese punto
-        Vector3 direction = (_targetPosition - enemy.transform.position).normalized;
+        Vector3 direction = (targetPosition - enemy.transform.position).normalized;
         if (direction != Vector3.zero)
         {
             enemy.transform.forward = direction;
         }
 
         //Llega al punto marcado
-        float distanceLeft = Vector3.Distance(enemy.transform.position, _targetPosition);
+        float distanceLeft = Vector3.Distance(enemy.transform.position, targetPosition);
         if (distanceLeft <= StopDistance)
         {
             return Status.Success;
@@ -64,7 +62,7 @@ public partial class EnemyRunsPlayerAction : Action
 
     protected override void OnEnd()
     {
-        _hasTarget = false;
+        hasTarget = false;
     }
 }
 

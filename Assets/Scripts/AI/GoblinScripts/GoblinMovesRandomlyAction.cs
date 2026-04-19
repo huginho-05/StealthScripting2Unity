@@ -52,7 +52,7 @@ public partial class GoblinMovesRandomlyAction : Action
         {
             return hit.position;
         }
-        return center; //Si falla, se queda donde está
+        return center; //¿Falla?, se queda donde está
     }
 }
 
